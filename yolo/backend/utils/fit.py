@@ -161,6 +161,6 @@ def _create_callbacks(saved_weights_name):
                                  mode='min', 
                                  period=1)
     reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2,
-                              patience=5, min_lr=0.00001,verbose=1)
+                              patience=5, min_lr=0.00001, verbose=1)
     callbacks = [early_stop, reduce_lr]
     return callbacks

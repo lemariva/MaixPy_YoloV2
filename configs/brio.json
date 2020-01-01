@@ -16,7 +16,7 @@
         "actual_epoch":         20,
         "train_image_folder":   "datasets/brio/images",
         "train_annot_folder":   "datasets/brio/xml",
-        "train_times":          2,
+        "train_times":          5,
         "valid_image_folder":   "datasets/brio/images_valid",
         "valid_annot_folder":   "datasets/brio/xml_valid",
         "valid_times":          2,
@@ -24,7 +24,7 @@
         "learning_rate":        1e-4,
         "saved_folder":   		"brio",
         "first_trainable_layer": "",
-        "jitter":				true,
+        "jitter":				false,
         "is_only_detect" : 		false
     }
 }

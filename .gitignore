@@ -133,5 +133,5 @@ dmypy.json
 *.tflite
 
 # training and evaluation
-brio/
-evaluation/
+/brio
+/evaluation

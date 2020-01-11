@@ -1,0 +1,26 @@
+<annotation verified="yes">
+	<folder>images</folder>
+	<filename>brio_72.jpg</filename>
+	<path>/notebooks/MaixPy_YoloV2/data/brio/images/brio_72.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>426</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>brio</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>69</xmin>
+			<ymin>179</ymin>
+			<xmax>311</xmax>
+			<ymax>341</ymax>
+		</bndbox>
+	</object>
+</annotation>

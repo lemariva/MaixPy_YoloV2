@@ -126,7 +126,7 @@ class YOLO(object):
         train_batch_generator = self._get_batch_generator(train_annotations, batch_size, train_times, jitter=jitter)
         valid_batch_generator = self._get_batch_generator(valid_annotations, batch_size, valid_times, jitter=False)
         
-        # 2. To train model get keras model instance & loss fucntion
+        # 2. To train model get keras model instance & loss function
         model = self._yolo_network.get_model(first_trainable_layer)
         loss = self._get_loss_func(batch_size)
         

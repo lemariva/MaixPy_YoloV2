@@ -2,12 +2,23 @@
 This repository helps you to extend the models is to detect objects using [YOLO-V2](https://pjreddie.com/media/files/papers/YOLO9000.pdf) on a MaixPY
 
 # DIY
-Install Docker on your machine and deploy the `tensorflow/tensorflow:latest-py3-jupyter` using:
+Install Docker on your machine and create a `notebooks` directory inside e.g. `Documents`:
+```sh
+curl -sSL https://get.docker.com | sh
+mkdir ~/Documents/notebooks/
 ```
-$ curl -sSL https://get.docker.com | sh
+Then, deploy the `tensorflow/tensorflow:latest-py3-jupyter` image using:
+```sh
+sudo docker run -d -p 8888:8888 -v ~/Documents/notebooks/:/notebooks/ tensorflow/tensorflow:latest-py3-jupyter
+```
+I explained the `-v` flag [here](https://lemariva.com/blog/2019/04/data-in-docker-analytics). But, it is basically a "Bind Mount". This means, the `~/Documents/notebooks/` directory is connected to the `/notebooks/` directory inside the container. This makes the data inside the directory `notebooks` (container) persistent. Otherwise, if the container is stopped you lose the files.
 
-$ sudo docker run -d -p 8888:8888 tensorflow/tensorflow:latest-py3-jupyter
+Then, clone the repository inside `~/Documents/notebooks/`
+```sh
+cd ~/Documents/notebooks/
+git clone https://github.com/lemariva/MaixPy_YoloV2
 ```
+
 Open the following URL in your host web browser: `http://localhost:8888`
 
 You need a token to log in. The token is inside the container. List the container to get the ID with following command:
@@ -34,9 +45,7 @@ Download this repository and upload it under `/notebooks/`
 
 I added a training example with the brio 33594. You can train the model running the code inside `training.ipynb`. 
 
-Additional information about the porting to MaixPy is coming this week.
-
 Note: Some additional libraries for the container are required and installed on the first cell block of the notebook. You don't need to run it everytime that you compile the model. If you start a new container (not restart the stopped one), you need to install them again.
 
 # Acknowledgement
-* Ported from [penny4860/Yolo-digit-detector](https://github.com/penny4860/Yolo-digit-detector) to Jupyter and upgraded to Tensorflow 2.0. ```
+* Ported from [penny4860/Yolo-digit-detector](https://github.com/penny4860/Yolo-digit-detector) to Jupyter and upgraded to Tensorflow 2.0. 

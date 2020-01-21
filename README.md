@@ -46,6 +46,8 @@ Download this repository and upload it under `/notebooks/`
 I added a training example with the brio 33594. You can train the model running the code inside `training.ipynb`. 
 
 Note: Some additional libraries for the container are required and installed on the first cell block of the notebook. You don't need to run it everytime that you compile the model. If you start a new container (not restart the stopped one), you need to install them again.
+# More Info
+Visit the following tutorial for more information: [MAixPy: Object detector - MobileNet and YOLOv2 on Sipeed MAix Dock](https://lemariva.com/blog/2020/01/maixpy-object-detector-mobilenet-and-yolov2-sipeed-maix-dock)
 
 # Acknowledgement
 * Ported from [penny4860/Yolo-digit-detector](https://github.com/penny4860/Yolo-digit-detector) to Jupyter and upgraded to Tensorflow 2.0. 

@@ -2,16 +2,16 @@
 This repository helps you to extend the models is to detect objects using [YOLO-V2](https://pjreddie.com/media/files/papers/YOLO9000.pdf) on a MaixPY
 
 # DIY
-Install Docker on your machine and create a `notebooks` directory inside e.g. `Documents`:
+Install Docker on your machine and create a `notebooks` folder inside e.g. `Documents`:
 ```sh
 curl -sSL https://get.docker.com | sh
 mkdir ~/Documents/notebooks/
 ```
 Then, deploy the `tensorflow/tensorflow:latest-py3-jupyter` image using:
 ```sh
-sudo docker run -d -p 8888:8888 -v ~/Documents/notebooks/:/notebooks/ tensorflow/tensorflow:latest-py3-jupyter
+sudo docker run -d -p 8888:8888 -v ~/Documents/notebooks/:/tf/notebooks/ tensorflow/tensorflow:latest-py3-jupyter
 ```
-I explained the `-v` flag [here](https://lemariva.com/blog/2019/04/data-in-docker-analytics). But, it is basically a "Bind Mount". This means, the `~/Documents/notebooks/` directory is connected to the `/notebooks/` directory inside the container. This makes the data inside the directory `notebooks` (container) persistent. Otherwise, if the container is stopped you lose the files.
+I explained the `-v` flag [here](https://lemariva.com/blog/2019/04/data-in-docker-analytics). But, it is a "Bind Mount". This means the `~/Documents/notebooks/` folder is connected to the `/tf/notebooks/` folder inside the container. This makes the data inside the folder `/tf/notebooks/` (container) persistent. Otherwise, if the container is stopped you lose the files.
 
 Then, clone the repository inside `~/Documents/notebooks/`
 ```sh
@@ -46,8 +46,9 @@ Download this repository and upload it under `/notebooks/`
 I added a training example with the brio 33594. You can train the model running the code inside `training.ipynb`. 
 
 Note: Some additional libraries for the container are required and installed on the first cell block of the notebook. You don't need to run it everytime that you compile the model. If you start a new container (not restart the stopped one), you need to install them again.
+
 # More Info
 Visit the following tutorial for more information: [MAixPy: Object detector - MobileNet and YOLOv2 on Sipeed MAix Dock](https://lemariva.com/blog/2020/01/maixpy-object-detector-mobilenet-and-yolov2-sipeed-maix-dock)
 
 # Acknowledgement
-* Ported from [penny4860/Yolo-digit-detector](https://github.com/penny4860/Yolo-digit-detector) to Jupyter and upgraded to Tensorflow 2.0. 
+* Ported from [penny4860/Yolo-digit-detector](https://github.com/penny4860/Yolo-digit-detector) to Jupyter Notebooks and upgraded to Tensorflow 2.0. 

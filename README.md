@@ -13,7 +13,7 @@ sudo docker run -d -p 8888:8888 -v ~/Documents/notebooks/:/tf/notebooks/ tensorf
 ```
 I explained the `-v` flag [here](https://lemariva.com/blog/2019/04/data-in-docker-analytics). But, it is a "Bind Mount". This means the `~/Documents/notebooks/` folder is connected to the `/tf/notebooks/` folder inside the container. This makes the data inside the folder `/tf/notebooks/` (container) persistent. Otherwise, if the container is stopped you lose the files.
 
-Then, clone the repository inside `~/Documents/notebooks/`
+Then, clone this repository inside `~/Documents/notebooks/`
 ```sh
 cd ~/Documents/notebooks/
 git clone https://github.com/lemariva/MaixPy_YoloV2
@@ -41,11 +41,9 @@ The Jupyter Notebook is running at:
 ```
 The hash after `token=` is the token to log in.
 
-Download this repository and upload it under `/notebooks/`
-
 I added a training example with the brio 33594. You can train the model running the code inside `training.ipynb`. 
 
-Note: Some additional libraries for the container are required and installed on the first cell block of the notebook. You don't need to run it everytime that you compile the model. If you start a new container (not restart the stopped one), you need to install them again.
+Note: Some additional libraries are required inside the container and they are installed on the first cell block of the Notebook. You don't need to run the cell every time that you compile the model. However, if you start a new container (not restart the stopped one), you need to install them again. You can extend the container to include these libraries per default. You can find more info about that on this <a href="https://lemariva.com/blog/2018/12/analytics-docker-for-data-science-environment" target="_blank">tutorial</a>.
 
 # More Info
 Visit the following tutorial for more information: [MAixPy: Object detector - MobileNet and YOLOv2 on Sipeed MAix Dock](https://lemariva.com/blog/2020/01/maixpy-object-detector-mobilenet-and-yolov2-sipeed-maix-dock)

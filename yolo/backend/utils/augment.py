@@ -101,14 +101,14 @@ def resize_image(image, boxes, desired_w, desired_h):
     for box in boxes:
         x1,y1,x2,y2 = box
         x1 = int(x1 * float(desired_w) / w)
-        x1 = max(min(x1, desired_w), 0)
+        x1 = max(min(x1, desired_w - 1), 0)
         x2 = int(x2 * float(desired_w) / w)
-        x2 = max(min(x2, desired_w), 0)
+        x2 = max(min(x2, desired_w - 1), 0)
         
         y1 = int(y1 * float(desired_h) / h)
-        y1 = max(min(y1, desired_h), 0)
+        y1 = max(min(y1, desired_h - 1), 0)
         y2 = int(y2 * float(desired_h) / h)
-        y2 = max(min(y2, desired_h), 0)
+        y2 = max(min(y2, desired_h - 1), 0)
 
         new_boxes.append([x1,y1,x2,y2])
     return image, np.array(new_boxes)
